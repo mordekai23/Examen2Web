@@ -7,12 +7,12 @@ $(document).ready(function(){
 
   $('#sign-up-form').validate({
     rules: {
-      name: {
+      nombre: {
         required: true
       },
-      email: {
+      correo: {
         required: true,
-        email: true
+        correo: true
       },
       password: {
         minlength: 6,

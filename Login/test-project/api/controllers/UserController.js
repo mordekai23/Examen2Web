@@ -7,21 +7,17 @@
 
 module.exports = {
 	'new': function (req, res) {
-
     res.view();
-
   },
 
   create: function (req, res, next) {
 	  User.create( req.params.all(), function  userCreated(err, user) {
-
 
       if(err) {
         console.log(err);
         req.session.flash = {
           err: err
         }
-
 
         return res.redirect('/user/new');
       }
@@ -89,7 +85,7 @@ module.exports = {
 
         // Inform other sockets (e.g. connected sockets that are subscribed) that this user is now logged in
         User.publishUpdate(user.id, {
-          name: user.name,
+          name: user.nombre,
           action: ' has been destroyed.'
         });
 

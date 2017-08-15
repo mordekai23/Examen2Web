@@ -1,5 +1,5 @@
 <form action="/user/create" method="POST" id="sign-up-form" class="form-signin">
-  <h2 class="form-signin-heading">Create an account</h2>
+  <h2 class="form-signin-heading">Crear una cuenta</h2>
 
   <% if(flash && flash.err) { %>
   <ul class="alert alert-success">
@@ -11,26 +11,26 @@
 
 
   <div class="control-group">
-    <input type="text" class="form-control" placeholder="your name" name="name">
+    <input type="text" class="form-control" placeholder="Nombre y apellido" name="nombre">
   </div>
 
   <div class="control-group">
-    <input type="text" class="form-control" placeholder="your title" name="title">
+    <input type="text" class="form-control" placeholder="Domicilio" name="direccion">
   </div>
 
   <div class="control-group">
-    <input type="text" class="form-control" placeholder="email address" name="email">
+    <input type="text" class="form-control" placeholder="Direccion de Correo" name="correo">
   </div>
 
   <div class="control-group">
-    <input type="password" class="form-control" placeholder="password" name="password" id="password">
+    <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password">
   </div>
 
   <div class="control-group">
-    <input type="password" class="form-control" placeholder="password confirmation" name="confirmation">
+    <input type="password" class="form-control" placeholder="Verificacion de contraseña" name="confirmation">
     <br />
   </div>
 
-  <input type="submit" class="btn btn-lg btn-primary btn-block" value="Create Account"/>
+  <input type="submit" class="btn btn-lg btn-primary btn-block" value="REGISTRARSE"/>
   <input type="hidden" name="_csrf" value="<%= _csrf %>" />
 </form>

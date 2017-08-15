@@ -10,28 +10,30 @@ module.exports = {
   schema: true,
 
   attributes: {
-    name: {
+    nombre: {
       type: 'string',
       required: true
     },
-    title: {
-      type: 'string'
-    },
-    email: {
+    direccion: {
       type: 'string',
-      email: true,
+      required: true
+    },
+    correo: {
+      type: 'string',
+      correo: true,
       required: true,
       unique: true
     },
 
-    encryptedPassword: {
-      type: 'string'
+    password: {
+      type: 'string',
+      required: true
     },
     toJSON: function() {
       var obj = this.toObject();
       delete obj.password;
       delete obj.confirmation;
-      delete obj.encryptedPassword;
+      delete obj.password;
       delete obj._csrf;
       return obj;
     }
@@ -47,7 +49,7 @@ module.exports = {
 
     require('bcrypt').hash(values.password, 10, function passwordEncrypted(err, encryptedPassword) {
       if (err) return next(err);
-      values.encryptedPassword = encryptedPassword;
+      values.password = encryptedPassword;
       // values.online= true;
       next();
     });
